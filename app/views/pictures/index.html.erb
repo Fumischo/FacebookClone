@@ -1,0 +1,41 @@
+<%= form_with(model: @picture, local: true ,url: confirm_pictures_path ) do |form| %>
+  <% if @picture.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= @picture.errors.count %>件のエラーがあります。 </h2>
+      <ul>
+      <% @picture.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <p class="picture_submit"><%= form.submit "投稿を作成" %></p>
+  <div class="picture_content">
+    <p class="picture_content_form"><%= form.text_field :content, placeholder: current_user.name+"さんー今なにしてる？",html: {id: 'picture_content_form'} %></p>
+  </div>
+  <%= image_tag((@picture.image.url), width:480) if @picture.image && @picture.image.url %>
+  <div class="picture_image">
+    <%= form.file_field :image %>
+  </div>
+<% end %>
+<br>
+<% @pictures.reverse_each do |picture| %>
+<div class="fbcontent">
+  <div class="fbcontent_text">
+    <div class="fbcontent_info">
+      <p id="fbcontent_name"><%= picture.user.name %></p>
+      <p id="fbcontent_time"><%= picture.created_at %></p>
+    </div>
+    <%= picture.content %><br>
+  </div>
+  <%= image_tag picture.image.url, width:480 %><br>
+  <div class="btn-group" role="group" aria-label="...">
+    <table>
+      <td><%= link_to "詳細", picture_path(picture.id), class: "btn btn-default" %></td>
+      <td><%= link_to "編集", edit_picture_path(picture.id), class: "btn btn-default", data: { confirm: '本当に編集しますか？' } %></td>
+      <td><%= link_to '削除', picture_path(picture.id), class: "btn btn-default", method: :delete, data: { confirm: '本当に削除しますか？' } %></td>
+    </table>
+  </div>
+</div>
+<br><br>
+<% end %>
