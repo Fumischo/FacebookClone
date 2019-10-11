@@ -28,6 +28,8 @@ class PicturesController < ApplicationController
     end
   end
 
+
+  
   def show
   end
 
