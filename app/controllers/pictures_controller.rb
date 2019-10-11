@@ -24,7 +24,7 @@ class PicturesController < ApplicationController
     if @picture.save
       redirect_to pictures_path, notice: "記事を投稿しました。"
     else
-      render 'index'
+      render :index
     end
   end
 
@@ -34,24 +34,24 @@ class PicturesController < ApplicationController
   def edit
     if @picture.user_id == session[:user_id]
       else
-        redirect_to pictures_path, notice: "他のユーザーの記事は編集できません。"
+        redirect_to pictures_path, notice: "他のユーザーの投稿は編集できません。"
     end
   end
 
   def update
     if @picture.update(picture_params)
-      redirect_to pictures_path, notice: "記事を編集しました。"
+      redirect_to pictures_path, notice: "投稿を編集しました。"
     else
-      render 'edit'
+      render :edit
     end
   end
 
   def destroy
     if @picture.user_id == session[:user_id]
       @picture.destroy
-      redirect_to pictures_path, notice:"記事を削除しました。 "
+      redirect_to pictures_path, notice:"投稿を削除しました。 "
       else
-        redirect_to pictures_path, notice: "他のユーザーの記事は削除できません。"
+        redirect_to pictures_path, notice: "他のユーザーの投稿は削除できません。"
     end
   end
 

@@ -1,3 +1,110 @@
-// Place all the styles related to the pictures controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+body {
+  background-color: #E9EBEE;
+}
+
+
+.fbcontent {
+  background-color: white;
+  width: 480px;
+}
+
+.fbcontent_text {
+  padding: 10px 0 10px 10px;
+}
+
+.fbcontent_info {
+  padding-left: 10px;
+}
+
+#fbcontent_name {
+  color: #385898;
+}
+
+#fbcontent_time {
+  font-size: 15px;
+}
+
+.nav{
+  color: white;
+}
+
+.navbar {
+  height: 40px;
+  background-color: #4267B2;
+  border: 0;
+  border-radius: 0;
+  padding-left: 130px;
+}
+
+.container-fluid {
+  height: 40px;
+}
+
+#navbar {
+  height: 40px;
+}
+
+.navbar-form .form-control {
+  margin-bottom: 3px;
+  height: 28px;
+  width: 480px;
+}
+
+#navbtn {
+  margin-top: 9px;
+  height: 20px;
+}
+
+.btnsubmit {
+  border: 0px;
+  background-color: #4267B2;
+  margin-top: 7px;
+}
+
+.navbar-default .navbar-nav>li>a {
+  color: white;
+}
+
+input {
+  width: 480px;
+}
+
+input[type="text"] {
+  width: 480px;
+  height: 80px;
+  border: 1px;
+  padding: 0px 0px 0px 20px;
+}
+
+input[type="submit"] {
+    text-align: left;
+}
+
+.picture_submit {
+  margin-bottom: 0px;
+}
+
+li {
+  list-style: none;
+}
+
+input[type="file"] {
+  height:38px;
+  width: 115px;
+  opacity:0;
+  cursor : pointer;
+}
+
+.picture_content_form {
+  margin: 0;
+}
+
+.picture_image {
+  margin-top: 0;
+  height: 38px;
+  width: 480px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-color: white;
+  background-image: url('投稿.png');
+}

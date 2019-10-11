@@ -1,26 +1,78 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>FbClone</title>
+    <title>FacebookClone</title>
     <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= favicon_link_tag('fcon.png') %>
   </head>
 
   <body>
-    <% flash.each do |key, value| %>
-      <%= content_tag(:div, value, class: "#{key}") %>
-    <% end %>
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <p class="navbar-text navbar-left">
+          <%= link_to index_path, class: "logo-link" do %>
+            <%= image_tag 'fcon.png', size:25 %>
+          <% end %>
+          </p>
+          
+        </div>
+          <div id="navbar" class="collapse navbar-collapse">
+            <% if logged_in? %>
+            <ul class="nav navbar-nav">
+              <li>
+                <form class="navbar-form navbar-left" role="search">
+          			  <div class="form-group">
+                    <input type="text" class="form-control" placeholder="検索キーワード">
+          				</div>
+                  <button type="submit" class="btnsubmit"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+          			</form>
+              </li>
+              <li>
+                <%= link_to user_path(current_user.id) do %>
+                  <%= current_user.name%>
+                <% end %>
+              </li>
+              <li><%= link_to "Profile", user_path(current_user.id) %></li>
+              <li><%= link_to "Logout", session_path(current_user.id), method: :delete %></li>
+            </ul>
+            <% else %>
+            <% end %>
+          </div>
+      </div>
+    </nav>
+        
 
-    <% if logged_in? %>
-      <%= link_to "Profile", user_path(current_user.id) %>
-      <%= link_to "Logout", session_path(current_user.id), method: :delete %>
-    <% else %>
-      <%= link_to "Sign up", new_user_path %>
-      <%= link_to "Login", new_session_path %>
-    <% end %>
-    <%= yield %>
+
+
+
+    <div class="container">
+      <div class="row">
+        <% if logged_in? %>
+        <li class="col-sm-2"><%= image_tag 'asideleft.png', width: 190 %></li> 
+        <% else %>
+        <% end %>
+        
+        
+        
+        <li class="col-sm-5">
+          <% flash.each do |key, value| %>
+            <%= content_tag(:div, value, class: "#{key}") %><br>
+          <% end %>
+      <%= yield %>
+        </li>
+        <% if logged_in? %>
+        <li class="col-sm-offset-0.8 col-sm-3"><%= image_tag 'asideright.png', width: 310 %></li> 
+        <% else %>
+        <% end %>
+    </div>
   </body>
 </html>
