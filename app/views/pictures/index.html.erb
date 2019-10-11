@@ -32,7 +32,7 @@
     </div>
     <%= picture.content %><br>
   </div>
-  <%= image_tag picture.image.url, width:480 %><br>
+  <%= image_tag asset_path picture.image.url, width:480 %><br>
   <div class="btn-group" role="group" aria-label="...">
     <table>
       <td><%= link_to "詳細", picture_path(picture.id), class: "btn btn-default" %></td>
