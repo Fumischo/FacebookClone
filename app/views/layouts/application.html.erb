@@ -56,7 +56,7 @@
     <div class="container">
       <div class="row">
         <% if logged_in? %>
-        <li class="col-sm-2">
+        <li class="col-sm-2"><%= image_tag 'asideleft.png', width: 190 %></li>
         <% else %>
         <% end %>
         
@@ -69,7 +69,7 @@
       <%= yield %>
         </li>
         <% if logged_in? %>
-        <li class="col-sm-offset-0.8 col-sm-3">
+        <li class="col-sm-offset-0.8 col-sm-3"><%= image_tag 'asideright.png', width: 310 %></li>
         <% else %>
         <% end %>
     </div>

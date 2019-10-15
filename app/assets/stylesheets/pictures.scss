@@ -1,7 +1,6 @@
 body {
-  background-color: #E9EBEE;
+  background-color: #e9ebee;
 }
-
 
 .fbcontent {
   background-color: white;
@@ -13,10 +12,9 @@ body {
 }
 
 .fbcontent_info {
-  padding-left: 10px;
+  padding-left: 1 0px;
 }
-
-#fbcontent_name {
+f #fbcontent_name {
   color: #385898;
 }
 
@@ -24,13 +22,13 @@ body {
   font-size: 15px;
 }
 
-.nav{
+.nav {
   color: white;
 }
 
 .navbar {
   height: 40px;
-  background-color: #4267B2;
+  background-color: #4267b2;
   border: 0;
   border-radius: 0;
   padding-left: 130px;
@@ -50,7 +48,6 @@ body {
   width: 480px;
 }
 
-
 #navbtn {
   margin-top: 9px;
   height: 20px;
@@ -58,11 +55,11 @@ body {
 
 .btnsubmit {
   border: 0px;
-  background-color: #4267B2;
+  background-color: #4267b2;
   margin-top: 7px;
 }
 
-.navbar-default .navbar-nav>li>a {
+.navbar-default .navbar-nav > li > a {
   color: white;
 }
 
@@ -78,7 +75,7 @@ input[type="text"] {
 }
 
 input[type="submit"] {
-    text-align: left;
+  text-align: left;
 }
 
 .picture_submit {
@@ -90,10 +87,10 @@ li {
 }
 
 input[type="file"] {
-  height:38px;
+  height: 38px;
   width: 115px;
-  opacity:0;
-  cursor : pointer;
+  opacity: 0;
+  cursor: pointer;
 }
 
 .picture_content_form {
@@ -107,5 +104,5 @@ input[type="file"] {
   background-size: contain;
   background-repeat: no-repeat;
   background-color: white;
-  background-image: url('send.png');
+  background-image: url("send.png");
 }
